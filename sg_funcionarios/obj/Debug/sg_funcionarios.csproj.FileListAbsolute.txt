@@ -1,0 +1,11 @@
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\bin\Debug\sg_funcionarios.exe.config
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\bin\Debug\sg_funcionarios.exe
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\bin\Debug\sg_funcionarios.pdb
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.csproj.AssemblyReference.cache
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.csproj.SuggestedBindingRedirects.cache
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.Properties.Resources.resources
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.csproj.GenerateResource.cache
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.csproj.CoreCompileInputs.cache
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.exe
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.pdb
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.Login.resources
