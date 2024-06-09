@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -13,11 +11,11 @@ using System.Windows.Forms;
 
 namespace sg_funcionarios
 {
-    public partial class Login : Form
+    public partial class Cadastro : Form
     {
         Thread th;
 
-        public Login()
+        public Cadastro()
         {
             InitializeComponent();
             Load += Form_Load;
@@ -44,16 +42,13 @@ namespace sg_funcionarios
             Application.Exit();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnCriarConta_Click(object sender, EventArgs e)
         {
             String nomeUsuario = tbNomeUsuario.Text;
             String senha = tbSenha.Text;
+            String confSenha = tbConfSenha.Text;
 
-            Usuario usuario = new Usuario();
-            usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
-
-            LoginBLL.validarLogin(usuario);
+            CadastroBLL.validarCadastro(nomeUsuario, senha, confSenha);
 
             if (Erro.getErro())
             {
@@ -61,28 +56,21 @@ namespace sg_funcionarios
                 return;
             }
 
-            if (!LoginBLL.usuarioExiste(usuario))
-            {
-                MessageBox.Show("Usuario inválido. Crie uma conta ou tente novamente.");
-                return; 
-            }
-
-            MessageBox.Show("Usuario autenticado com sucesso!");
+            MessageBox.Show("Usuario criado com sucesso. ");
         }
 
-        private void btnIrCadastro_Click(object sender, EventArgs e)
+        private void btnIrLogin_Click(object sender, EventArgs e)
         {
             this.Close();
 
-            th = new Thread(abrirFormCadastro);
+            th = new Thread(abrirFormLogin);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
 
-        private void abrirFormCadastro(object obj)
+        private void abrirFormLogin(object obj)
         {
-            Application.Run(new Cadastro());
+            Application.Run(new Login());
         }
-
     }
 }

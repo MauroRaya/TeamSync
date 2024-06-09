@@ -15,8 +15,6 @@ namespace sg_funcionarios
         private static string pathArquivoDb = Path.Combine(diretorioBase, "EmpregadosDB.mdf");
         private static string strConexao = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={pathArquivoDb};Integrated Security=True;Connect Timeout=30";
         private static SqlConnection conn;
-        private static SqlCommand cmd;
-        private static SqlDataReader reader;
 
         public static void conectar()
         {
@@ -41,6 +39,11 @@ namespace sg_funcionarios
             {
                 Erro.setMsgErro("Erro ao tentar desconectar o banco de dados. " + e);
             }
+        }
+
+        public static SqlConnection getConexao()
+        {
+            return conn;
         }
     }
 }
