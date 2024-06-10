@@ -68,6 +68,12 @@
     <Compile Include="Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Gerenciador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerenciador.Designer.cs">
+      <DependentUpon>Gerenciador.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginDAL.cs" />
     <Compile Include="CadastroDAL.cs" />
     <Compile Include="DAL.cs" />
@@ -86,6 +92,9 @@
     <Compile Include="LoginBLL.cs" />
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerenciador.resx">
+      <DependentUpon>Gerenciador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

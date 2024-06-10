@@ -12,41 +12,12 @@ namespace sg_funcionarios
         private String nome;
         private String senha;
 
-        public Usuario()
-        {
+        public int getCodigo() { return codigo; }
+        public String getNome() { return nome; }
+        public String getSenha() { return senha; }
 
-        }
-
-        public Usuario(String _nome, String _senha)
-        {
-            nome = _nome;
-            senha = _senha;
-        }
-
-        public int getCodigo()
-        {
-            return codigo;
-        }
-        public String getNome()
-        {
-            return nome;
-        }
-        public String getSenha()
-        {
-            return senha;
-        }
-
-        public void setCodigo(int _codigo)
-        {
-            codigo = _codigo;
-        }
-        public void setNome(String _nome)
-        {
-            nome = _nome;
-        }
-        public void setSenha(String _senha)
-        {
-            senha = _senha;
-        }
+        public void setCodigo(int _codigo) { codigo = _codigo; }
+        public void setNome(String _nome) { nome = _nome; }
+        public void setSenha(String _senha) { senha = _senha; }
     }
 }

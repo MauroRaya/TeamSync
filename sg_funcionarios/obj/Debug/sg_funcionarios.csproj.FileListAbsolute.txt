@@ -10,3 +10,4 @@ C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.pdb
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.Login.resources
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.Cadastro.resources
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.Gerenciador.resources

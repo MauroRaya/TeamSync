@@ -14,6 +14,7 @@ namespace sg_funcionarios
     public partial class Cadastro : Form
     {
         Thread th;
+        Usuario usuario = new Usuario();
 
         public Cadastro()
         {
@@ -48,7 +49,16 @@ namespace sg_funcionarios
             String senha = tbSenha.Text;
             String confSenha = tbConfSenha.Text;
 
-            CadastroBLL.validarCadastro(nomeUsuario, senha, confSenha);
+            if (senha != confSenha)
+            {
+                MessageBox.Show("Senhas precisam ter o mesmo valor. ");
+                return;
+            }
+
+            usuario.setNome(nomeUsuario);
+            usuario.setSenha(senha);
+
+            CadastroBLL.validarCadastro(usuario);
 
             if (Erro.getErro())
             {

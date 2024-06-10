@@ -16,6 +16,7 @@ namespace sg_funcionarios
     public partial class Login : Form
     {
         Thread th;
+        Usuario usuario = new Usuario();
 
         public Login()
         {
@@ -49,7 +50,8 @@ namespace sg_funcionarios
             String nomeUsuario = tbNomeUsuario.Text;
             String senha = tbSenha.Text;
 
-            Usuario usuario = new Usuario(nomeUsuario, senha);
+            usuario.setNome(nomeUsuario);
+            usuario.setSenha(senha);
 
             LoginBLL.validarLogin(usuario);
 

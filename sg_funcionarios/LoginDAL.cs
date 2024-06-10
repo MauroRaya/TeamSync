@@ -12,7 +12,6 @@ namespace sg_funcionarios
     static class LoginDAL
     {
         private static SqlCommand cmd;
-        private static SqlDataReader reader;
 
         public static bool usuarioExiste(Usuario usuario)
         {

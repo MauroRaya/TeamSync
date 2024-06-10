@@ -8,35 +8,21 @@ namespace sg_funcionarios
 {
     static class CadastroBLL
     {
-        public static void validarCadastro(String nomeUsuario, String senha, String confSenha)
+        public static void validarCadastro(Usuario usuario)
         {
             Erro.setErro(false);
 
-            if (nomeUsuario.Equals("") || nomeUsuario == null)
+            if (usuario.getNome().Equals("") || usuario.getNome() == null)
             {
                 Erro.setMsgErro("Nome de usuario é de preenchimento obrigatório. ");
                 return;
             }
 
-            if (senha.Equals("") || senha == null)
+            if (usuario.getSenha().Equals("") || usuario.getSenha() == null)
             {
                 Erro.setMsgErro("Senha é de preenchimento obrigatório. ");
                 return;
             }
-
-            if (confSenha.Equals("") || confSenha == null)
-            {
-                Erro.setMsgErro("Confirmar senha é de preenchimento obrigatório. ");
-                return;
-            }
-
-            if (senha != confSenha)
-            {
-                Erro.setMsgErro("Senhas precisam ter o mesmo valor. ");
-                return;
-            }
-
-            Usuario usuario = new Usuario(nomeUsuario, senha);
 
             CadastroDAL.criarUsuario(usuario);
         }
