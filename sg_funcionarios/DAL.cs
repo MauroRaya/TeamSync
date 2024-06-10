@@ -43,6 +43,11 @@ namespace sg_funcionarios
 
         public static SqlConnection getConexao()
         {
+            if (conn == null)
+            {
+                conectar();
+            }
+
             return conn;
         }
     }

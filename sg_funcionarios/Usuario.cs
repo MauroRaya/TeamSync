@@ -12,6 +12,17 @@ namespace sg_funcionarios
         private String nome;
         private String senha;
 
+        public Usuario()
+        {
+
+        }
+
+        public Usuario(String _nome, String _senha)
+        {
+            nome = _nome;
+            senha = _senha;
+        }
+
         public int getCodigo()
         {
             return codigo;

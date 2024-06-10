@@ -49,9 +49,7 @@ namespace sg_funcionarios
             String nomeUsuario = tbNomeUsuario.Text;
             String senha = tbSenha.Text;
 
-            Usuario usuario = new Usuario();
-            usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
+            Usuario usuario = new Usuario(nomeUsuario, senha);
 
             LoginBLL.validarLogin(usuario);
 

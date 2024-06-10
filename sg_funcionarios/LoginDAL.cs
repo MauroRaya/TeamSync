@@ -24,26 +24,36 @@ namespace sg_funcionarios
                 return false;
             }
 
-            string query = "SELECT * FROM usuario";
+            string query = "SELECT nm_usuario, ds_senha FROM Usuario WHERE nm_usuario = @nome AND ds_senha = @senha";
 
             cmd = new SqlCommand(query, conn);
-            reader = cmd.ExecuteReader();
+            cmd.Parameters.AddWithValue("@nome", usuario.getNome());
+            cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
 
-            if (reader == null)
+            object result = null;
+
+            try
             {
-                Erro.setMsgErro("Erro ao consultar tabela do usuario. ");
-                return false;
+                if (conn.State == System.Data.ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                result = cmd.ExecuteScalar();
+            }
+            catch (Exception e)
+            {
+                Erro.setMsgErro("Erro ao tentar consultar e autenticar usuario. ");
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
 
-            while (reader.Read())
-            {
-                String nomeUsuarioDB = reader.GetString(1);
-                String senhaDB = reader.GetString(2);
-
-                return nomeUsuarioDB == usuario.getNome() && senhaDB == usuario.getSenha();
-            }
-
-            return false;
+            return result != null;
         }
     }
 }

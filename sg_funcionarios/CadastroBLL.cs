@@ -36,9 +36,7 @@ namespace sg_funcionarios
                 return;
             }
 
-            Usuario usuario = new Usuario();
-            usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
+            Usuario usuario = new Usuario(nomeUsuario, senha);
 
             CadastroDAL.criarUsuario(usuario);
         }

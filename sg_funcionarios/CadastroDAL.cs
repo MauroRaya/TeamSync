@@ -31,12 +31,24 @@ namespace sg_funcionarios
 
             try
             {
+                if (conn.State == System.Data.ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e)
             {
                 Erro.setMsgErro("Erro ao tentar inserir o usuario no banco de dados. " + e);
                 return;
+            }
+            finally
+            {
+                if (conn.State == System.Data.ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
         }
     }
