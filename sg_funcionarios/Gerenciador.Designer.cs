@@ -44,20 +44,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbSalario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deletar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbMasculino = new System.Windows.Forms.RadioButton();
             this.rbFeminino = new System.Windows.Forms.RadioButton();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -112,7 +110,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1185, 71);
+            this.panel1.Size = new System.Drawing.Size(1193, 71);
             this.panel1.TabIndex = 9;
             // 
             // btnSair
@@ -125,7 +123,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(1160, 0);
+            this.btnSair.Location = new System.Drawing.Point(1168, 0);
             this.btnSair.Margin = new System.Windows.Forms.Padding(0);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(25, 35);
@@ -230,71 +228,6 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "Salário";
             // 
-            // dgvFuncionario
-            // 
-            this.dgvFuncionario.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvFuncionario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFuncionario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvFuncionario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nome,
-            this.dataNascimento,
-            this.genero,
-            this.telefone,
-            this.cargo,
-            this.salario,
-            this.editar,
-            this.deletar});
-            this.dgvFuncionario.Location = new System.Drawing.Point(307, 88);
-            this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvFuncionario.Size = new System.Drawing.Size(790, 475);
-            this.dgvFuncionario.TabIndex = 25;
-            // 
-            // nome
-            // 
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            // 
-            // dataNascimento
-            // 
-            this.dataNascimento.HeaderText = "Data de nascimento";
-            this.dataNascimento.Name = "dataNascimento";
-            this.dataNascimento.Width = 150;
-            // 
-            // genero
-            // 
-            this.genero.HeaderText = "Gênero";
-            this.genero.Name = "genero";
-            // 
-            // telefone
-            // 
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
-            // 
-            // cargo
-            // 
-            this.cargo.HeaderText = "Cargo";
-            this.cargo.Name = "cargo";
-            // 
-            // salario
-            // 
-            this.salario.HeaderText = "Salário";
-            this.salario.Name = "salario";
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "";
-            this.editar.Name = "editar";
-            this.editar.Width = 50;
-            // 
-            // deletar
-            // 
-            this.deletar.HeaderText = "";
-            this.deletar.Name = "deletar";
-            this.deletar.Width = 50;
-            // 
             // rbMasculino
             // 
             this.rbMasculino.AutoSize = true;
@@ -328,15 +261,95 @@
             this.dtpDataNascimento.Size = new System.Drawing.Size(102, 20);
             this.dtpDataNascimento.TabIndex = 28;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(280, 88);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(893, 46);
+            this.panel2.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(728, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(59, 18);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Salário";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(542, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 18);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Cargo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label12.Location = new System.Drawing.Point(424, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 18);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Telefone";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(338, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 18);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Gênero";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(228, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 18);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Data Nasc.";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(3, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 18);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Nome";
+            // 
             // Gerenciador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 591);
+            this.ClientSize = new System.Drawing.Size(1193, 591);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.rbFeminino);
             this.Controls.Add(this.rbMasculino);
-            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.tbSalario);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbCargo);
@@ -356,7 +369,8 @@
             this.Text = "Gerenciador";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,17 +393,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbSalario;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataNascimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deletar;
         private System.Windows.Forms.RadioButton rbMasculino;
         private System.Windows.Forms.RadioButton rbFeminino;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

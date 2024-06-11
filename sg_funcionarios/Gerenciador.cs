@@ -13,6 +13,7 @@ namespace sg_funcionarios
     public partial class Gerenciador : Form
     {
         Funcionario funcionario = new Funcionario();
+        LinhaFuncionario linhaFuncionario;
 
         public Gerenciador()
         {
@@ -27,20 +28,11 @@ namespace sg_funcionarios
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             String nome = tbNome.Text;
-            String dataNascimento = dtpDataNascimento.Value.ToString();
-            char genero;
+            String dataNascimento = dtpDataNascimento.Value.ToString("dd/MM/yyyy");
+            char genero = rbMasculino.Checked ? 'M' : 'F';
             String telefone = tbTelefone.Text;
             String cargo = tbCargo.Text;
             String salario = tbSalario.Text;
-
-            if (rbMasculino.Checked)
-            {
-                genero = 'M';
-            }
-            else
-            {
-                genero = 'F';
-            }
 
             funcionario.setNome(nome);
             funcionario.setDataNascimento(dataNascimento);
@@ -49,14 +41,11 @@ namespace sg_funcionarios
             funcionario.setCargo(cargo);
             funcionario.setSalario(salario);
 
-            dgvFuncionario.Rows.Add(
-                funcionario.getNome(),
-                funcionario.getDataNascimento(),
-                funcionario.getGenero(),
-                funcionario.getTelefone(),
-                funcionario.getCargo(),
-                funcionario.getSalario()
-            );
+            LinhaFuncionario linhaFuncionario = new LinhaFuncionario();
+            linhaFuncionario.setFuncionario(funcionario);
+
+            linhaFuncionario.Location = new Point(280, 135 + (linhaFuncionario.Height * (this.Controls.OfType<LinhaFuncionario>().Count())));
+            this.Controls.Add(linhaFuncionario);
         }
     }
 }

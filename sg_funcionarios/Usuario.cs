@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sg_funcionarios
 {
-    class Usuario
+    public class Usuario
     {
         private int codigo;
         private String nome;
