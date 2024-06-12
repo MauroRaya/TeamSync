@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,12 @@ namespace sg_funcionarios
     public partial class Gerenciador : Form
     {
         Funcionario funcionario = new Funcionario();
-        LinhaFuncionario linhaFuncionario;
 
         public Gerenciador()
         {
             InitializeComponent();
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Green;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -41,11 +43,32 @@ namespace sg_funcionarios
             funcionario.setCargo(cargo);
             funcionario.setSalario(salario);
 
-            LinhaFuncionario linhaFuncionario = new LinhaFuncionario();
-            linhaFuncionario.setFuncionario(funcionario);
+            string imgEditarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_editar.png");
+            string imgRemoverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_remover.png");
 
-            linhaFuncionario.Location = new Point(280, 135 + (linhaFuncionario.Height * (this.Controls.OfType<LinhaFuncionario>().Count())));
-            this.Controls.Add(linhaFuncionario);
+            Bitmap imgEditar = null;
+            Bitmap imgRemover = null;
+
+            using (Bitmap originalImage = new Bitmap(imgEditarPath))
+            {
+                imgEditar = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
+            }
+
+            using (Bitmap originalImage = new Bitmap(imgRemoverPath))
+            {
+                imgRemover = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
+            }
+
+            dataGridView1.Rows.Add(
+                funcionario.getNome(),
+                funcionario.getDataNascimento(),
+                funcionario.getGenero(),
+                funcionario.getTelefone(),
+                funcionario.getCargo(),
+                funcionario.getSalario(),
+                imgEditar,
+                imgRemover
+            );
         }
     }
 }
