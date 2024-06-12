@@ -16,7 +16,7 @@ namespace sg_funcionarios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Gerenciador());
+            Application.Run(new Login());
         }
     }
 }

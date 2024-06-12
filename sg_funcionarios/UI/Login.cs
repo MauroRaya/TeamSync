@@ -21,23 +21,6 @@ namespace sg_funcionarios
         public Login()
         {
             InitializeComponent();
-            Load += Form_Load;
-            FormClosed += Form_Closed;
-        }
-
-        private void Form_Load(object sender, EventArgs e)
-        {
-            if (BLL.getConexao() == null)
-            {
-                BLL.conectar();
-            }
-        }
-        private void Form_Closed(object sender, EventArgs e)
-        {
-            if (BLL.getConexao() != null)
-            {
-                BLL.desconectar();
-            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -63,8 +46,8 @@ namespace sg_funcionarios
 
             if (!LoginBLL.usuarioExiste(usuario))
             {
-                MessageBox.Show("Usuario inválido. Crie uma conta ou tente novamente.");
-                return; 
+                MessageBox.Show("Usuario inválido. Tente novamente ou crie uma conta.");
+                return;
             }
 
             MessageBox.Show("Usuario autenticado com sucesso!");

@@ -19,23 +19,6 @@ namespace sg_funcionarios
         public Cadastro()
         {
             InitializeComponent();
-            Load += Form_Load;
-            FormClosed += Form_Closed;
-        }
-
-        private void Form_Load(object sender, EventArgs e)
-        {
-            if (BLL.getConexao() == null)
-            {
-                BLL.conectar();
-            }
-        }
-        private void Form_Closed(object sender, EventArgs e)
-        {
-            if (BLL.getConexao() != null)
-            {
-                BLL.desconectar();
-            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -58,7 +41,7 @@ namespace sg_funcionarios
             usuario.setNome(nomeUsuario);
             usuario.setSenha(senha);
 
-            CadastroBLL.validarCadastro(usuario);
+            CadastroBLL.validarCadastro(usuario); //caso validação bem sucedida, já cria no banco
 
             if (Erro.getErro())
             {

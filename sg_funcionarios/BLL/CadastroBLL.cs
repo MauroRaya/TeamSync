@@ -12,13 +12,13 @@ namespace sg_funcionarios
         {
             Erro.setErro(false);
 
-            if (usuario.getNome().Equals("") || usuario.getNome() == null)
+            if (String.IsNullOrEmpty(usuario.getNome()))
             {
                 Erro.setMsgErro("Nome de usuario é de preenchimento obrigatório. ");
                 return;
             }
 
-            if (usuario.getSenha().Equals("") || usuario.getSenha() == null)
+            if (String.IsNullOrEmpty(usuario.getSenha()))
             {
                 Erro.setMsgErro("Senha é de preenchimento obrigatório. ");
                 return;
