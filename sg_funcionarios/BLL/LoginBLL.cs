@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sg_funcionarios.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,26 +9,26 @@ namespace sg_funcionarios
 {
     static class LoginBLL
     {
-        public static void validarLogin(Usuario usuario)
+        public static void validarCampos(Login login)
         {
             Erro.setErro(false);
 
-            if (String.IsNullOrEmpty(usuario.getNome()))
+            if (String.IsNullOrEmpty(login.getNome()))
             {
                 Erro.setMsgErro("Nome de usuario é de preenchimento obrigatório. ");
                 return;
             }
 
-            if (String.IsNullOrEmpty(usuario.getSenha()))
+            if (String.IsNullOrEmpty(login.getSenha()))
             {
                 Erro.setMsgErro("Senha é de preenchimento obrigatório. ");
                 return;
             }
         }
 
-        public static bool usuarioExiste(Usuario usuario)
+        public static bool usuarioExiste(Login login)
         {
-            return LoginDAL.usuarioExiste(usuario);
+            return LoginDAL.usuarioExiste(login);
         }
     }
 }

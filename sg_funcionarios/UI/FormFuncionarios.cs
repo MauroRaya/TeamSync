@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace sg_funcionarios
 {
-    public partial class Gerenciador : Form
+    public partial class FormFuncionarios : Form
     {
         Funcionario funcionario = new Funcionario();
 
-        public Gerenciador()
+        public FormFuncionarios()
         {
             InitializeComponent();
 

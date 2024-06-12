@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sg_funcionarios.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -12,7 +13,7 @@ namespace sg_funcionarios
 {
     static class CadastroDAL
     {
-        public static void criarUsuario(Usuario usuario)
+        public static void criarUsuario(Cadastro cadastro)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -28,9 +29,14 @@ namespace sg_funcionarios
                 {
                     conn.Open();
                 }
-                catch (Exception e) 
+                catch (SqlException ex)
                 {
-                    Erro.setMsgErro("Erro ao abrir porta de conexão. " + e.Message);
+                    Erro.setMsgErro("Erro ao abrir porta de conexão. " + ex.Message);
+                    return;
+                }
+                catch (Exception ex) 
+                {
+                    Erro.setMsgErro("Um erro inesperado aconteceu ao tentar abrir a porta de conexão. " + ex.Message);
                     return;
                 }
 
@@ -38,16 +44,21 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome", usuario.getNome());
-                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
+                    cmd.Parameters.AddWithValue("@nome", cadastro.getNome());
+                    cmd.Parameters.AddWithValue("@senha", cadastro.getSenha());
 
                     try
                     {
                         cmd.ExecuteNonQuery();
                     }
-                    catch (Exception e)
+                    catch (SqlException ex)
                     {
-                        Erro.setMsgErro("Erro ao tentar inserir o usuario no banco de dados. " + e);
+                        Erro.setMsgErro("Erro ao tentar inserir o usuario no banco de dados. " + ex.Message);
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        Erro.setMsgErro("Um erro inesperado aconteceu ao tentar inserir o usuario no banco de dados. " + ex.Message);
                         return;
                     }
                 }

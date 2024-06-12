@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sg_funcionarios.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,12 @@ using System.Windows.Forms;
 
 namespace sg_funcionarios
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
         Thread th;
-        Usuario usuario = new Usuario();
+        Login login = new Login();
 
-        public Login()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -33,10 +34,10 @@ namespace sg_funcionarios
             String nomeUsuario = tbNomeUsuario.Text;
             String senha = tbSenha.Text;
 
-            usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
+            login.setNome(nomeUsuario);
+            login.setSenha(senha);
 
-            LoginBLL.validarLogin(usuario);
+            LoginBLL.validarCampos(login);
 
             if (Erro.getErro())
             {
@@ -44,7 +45,7 @@ namespace sg_funcionarios
                 return;
             }
 
-            if (!LoginBLL.usuarioExiste(usuario))
+            if (!LoginBLL.usuarioExiste(login))
             {
                 MessageBox.Show("Usuario inválido. Tente novamente ou crie uma conta.");
                 return;
@@ -64,7 +65,7 @@ namespace sg_funcionarios
 
         private void abrirFormCadastro(object obj)
         {
-            Application.Run(new Cadastro());
+            Application.Run(new FormCadastro());
         }
 
     }

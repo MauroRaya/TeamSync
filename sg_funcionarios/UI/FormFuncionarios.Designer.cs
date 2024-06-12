@@ -1,6 +1,6 @@
 ﻿namespace sg_funcionarios
 {
-    partial class Gerenciador
+    partial class FormFuncionarios
     {
         /// <summary>
         /// Required designer variable.

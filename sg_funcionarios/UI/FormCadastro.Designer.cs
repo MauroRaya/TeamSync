@@ -1,6 +1,6 @@
 ﻿namespace sg_funcionarios
 {
-    partial class Cadastro
+    partial class FormCadastro
     {
         /// <summary>
         /// Required designer variable.

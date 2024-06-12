@@ -1,6 +1,6 @@
 ﻿namespace sg_funcionarios
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         /// Variável de designer necessária.

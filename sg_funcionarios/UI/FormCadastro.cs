@@ -1,4 +1,5 @@
-﻿using System;
+﻿using sg_funcionarios.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,12 +12,12 @@ using System.Windows.Forms;
 
 namespace sg_funcionarios
 {
-    public partial class Cadastro : Form
+    public partial class FormCadastro : Form
     {
         Thread th;
-        Usuario usuario = new Usuario();
+        Cadastro cadastro = new Cadastro();
 
-        public Cadastro()
+        public FormCadastro()
         {
             InitializeComponent();
         }
@@ -32,16 +33,10 @@ namespace sg_funcionarios
             String senha = tbSenha.Text;
             String confSenha = tbConfSenha.Text;
 
-            if (senha != confSenha)
-            {
-                MessageBox.Show("Senhas precisam ter o mesmo valor. ");
-                return;
-            }
+            cadastro.setNome(nomeUsuario);
+            cadastro.setSenha(senha);
 
-            usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
-
-            CadastroBLL.validarCadastro(usuario); //caso validação bem sucedida, já cria no banco
+            CadastroBLL.validarCampos(cadastro); //caso validação bem sucedida, já cria no banco
 
             if (Erro.getErro())
             {
@@ -63,7 +58,7 @@ namespace sg_funcionarios
 
         private void abrirFormLogin(object obj)
         {
-            Application.Run(new Login());
+            Application.Run(new FormLogin());
         }
     }
 }
