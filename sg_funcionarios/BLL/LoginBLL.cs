@@ -30,5 +30,10 @@ namespace sg_funcionarios
         {
             return LoginDAL.usuarioExiste(login);
         }
+
+        public static int getCodigoUsuario(Login login)
+        {
+            return LoginDAL.getCodigoUsuario(login);
+        }
     }
 }

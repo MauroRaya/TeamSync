@@ -51,7 +51,21 @@ namespace sg_funcionarios
                 return;
             }
 
+            int codigoUsuario = LoginBLL.getCodigoUsuario(login);
+
+            if (codigoUsuario == -1)
+            {
+                MessageBox.Show(Erro.getMsgErro());
+                return;
+            }
+
+            Usuario.setCodigo(codigoUsuario);
+            Usuario.setNome(login.getNome());
+            Usuario.setSenha(login.getSenha());
+
             MessageBox.Show("Usuario autenticado com sucesso!");
+
+            irFuncionarios(this, EventArgs.Empty);
         }
 
         private void btnIrCadastro_Click(object sender, EventArgs e)
@@ -68,5 +82,18 @@ namespace sg_funcionarios
             Application.Run(new FormCadastro());
         }
 
+        private void irFuncionarios(object sender, EventArgs e)
+        {
+            this.Close();
+
+            th = new Thread(abrirFormFuncionarios);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void abrirFormFuncionarios(object obj)
+        {
+            Application.Run(new FormFuncionarios());
+        }
     }
 }

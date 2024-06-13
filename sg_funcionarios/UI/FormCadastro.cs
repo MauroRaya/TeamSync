@@ -35,6 +35,7 @@ namespace sg_funcionarios
 
             cadastro.setNome(nomeUsuario);
             cadastro.setSenha(senha);
+            cadastro.setConfSenha(confSenha);
 
             CadastroBLL.validarCampos(cadastro); //caso validação bem sucedida, já cria no banco
 
@@ -45,6 +46,7 @@ namespace sg_funcionarios
             }
 
             MessageBox.Show("Usuario criado com sucesso. ");
+            btnIrLogin_Click(this, EventArgs.Empty);
         }
 
         private void btnIrLogin_Click(object sender, EventArgs e)

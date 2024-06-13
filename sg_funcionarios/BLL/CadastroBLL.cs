@@ -32,7 +32,8 @@ namespace sg_funcionarios
                 return;
             }
 
-            CadastroDAL.criarUsuario(cadastro);
+            //desativo por enquanto, por questões de teste
+            //CadastroDAL.criarUsuario(cadastro);
         }
     }
 }

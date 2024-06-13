@@ -68,5 +68,64 @@ namespace sg_funcionarios
                 }
             }
         }
+
+        public static int getCodigoUsuario(Login login)
+        {
+            String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
+
+            using (var conn = new SqlConnection(strConexao))
+            {
+                if (conn == null)
+                {
+                    Erro.setMsgErro("Conexão não foi definida ou está com problema. ");
+                    return -1;
+                }
+
+                try
+                {
+                    conn.Open();
+                }
+                catch (SqlException ex)
+                {
+                    Erro.setMsgErro("Erro ao abrir porta de conexão. " + ex.Message);
+                    return -1;
+                }
+                catch (Exception ex)
+                {
+                    Erro.setMsgErro("Um erro inesperado aconteceu ao tentar abrir a porta de conexão. " + ex.Message);
+                    return -1;
+                }
+
+                String query = "SELECT cd_usuario FROM Usuario WHERE nm_usuario = @nome AND ds_senha = @senha";
+
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nome", login.getNome());
+                    cmd.Parameters.AddWithValue("@senha", login.getSenha());
+
+                    try
+                    {
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null && int.TryParse(result.ToString(), out int codigoUsuario))
+                        {
+                            return codigoUsuario;
+                        }
+                    }
+                    catch (SqlException ex)
+                    {
+                        Erro.setMsgErro("Erro ao tentar consultar o usuario no banco de dados. " + ex.Message);
+                        return -1;
+                    }
+                    catch (Exception ex)
+                    {
+                        Erro.setMsgErro("Um erro inesperado aconteceu ao tentar consultar o usuario. " + ex.Message);
+                        return -1;
+                    }
+                    
+                    return -1;
+                }
+            }
+        }
     }
 }
