@@ -47,7 +47,7 @@ namespace sg_funcionarios
 
             if (!LoginBLL.usuarioExiste(login))
             {
-                MessageBox.Show("Usuario inválido. Tente novamente ou crie uma conta.");
+                MessageBox.Show(Erro.getMsgErro());
                 return;
             }
 

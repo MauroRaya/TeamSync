@@ -96,7 +96,7 @@ namespace sg_funcionarios
                     return -1;
                 }
 
-                String query = "SELECT cd_usuario FROM Usuario WHERE nm_usuario = @nome AND ds_senha = @senha";
+                String query = "SELECT cd_usuario FROM Usuario WHERE nm_usuario COLLATE Latin1_General_BIN = @nome AND ds_senha = @senha";
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
@@ -111,6 +111,11 @@ namespace sg_funcionarios
                         {
                             return codigoUsuario;
                         }
+                        else
+                        {
+                            Erro.setMsgErro("Usuário não foi encontrado. ");
+                            return -1;
+                        }
                     }
                     catch (SqlException ex)
                     {
@@ -122,8 +127,6 @@ namespace sg_funcionarios
                         Erro.setMsgErro("Um erro inesperado aconteceu ao tentar consultar o usuario. " + ex.Message);
                         return -1;
                     }
-                    
-                    return -1;
                 }
             }
         }

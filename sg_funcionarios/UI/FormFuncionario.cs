@@ -85,7 +85,7 @@ namespace sg_funcionarios
             funcionario.setCargo(cargo);
             funcionario.setSalario(salario);
 
-            FuncionarioBLL.validarCampos(funcionario);
+            FuncionarioBLL.validarCampos(funcionario); //ja cria no banco se validar
 
             if (Erro.getErro())
             {
