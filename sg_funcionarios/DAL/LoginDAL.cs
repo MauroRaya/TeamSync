@@ -13,7 +13,7 @@ namespace sg_funcionarios
 {
     static class LoginDAL
     {
-        public static bool usuarioExiste(Login login)
+        public static bool usuarioExiste(LoginVM login)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -69,7 +69,7 @@ namespace sg_funcionarios
             }
         }
 
-        public static int getCodigoUsuario(Login login)
+        public static int getCodigoUsuario(LoginVM login)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -100,7 +100,7 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome", login.getNome());
+                    cmd.Parameters.AddWithValue("@nome",  login.getNome());
                     cmd.Parameters.AddWithValue("@senha", login.getSenha());
 
                     try

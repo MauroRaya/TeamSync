@@ -9,5 +9,5 @@ C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.exe
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.pdb
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormCadastro.resources
-C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormFuncionarios.resources
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormLogin.resources
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormFuncionario.resources

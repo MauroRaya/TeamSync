@@ -17,7 +17,7 @@ namespace sg_funcionarios
     public partial class FormLogin : Form
     {
         Thread th;
-        Login login = new Login();
+        LoginVM login = new LoginVM();
 
         public FormLogin()
         {
@@ -86,14 +86,14 @@ namespace sg_funcionarios
         {
             this.Close();
 
-            th = new Thread(abrirFormFuncionarios);
+            th = new Thread(abrirFormFuncionario);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
 
-        private void abrirFormFuncionarios(object obj)
+        private void abrirFormFuncionario(object obj)
         {
-            Application.Run(new FormFuncionarios());
+            Application.Run(new FormFuncionario());
         }
     }
 }

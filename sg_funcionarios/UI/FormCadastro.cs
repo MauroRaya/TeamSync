@@ -15,7 +15,7 @@ namespace sg_funcionarios
     public partial class FormCadastro : Form
     {
         Thread th;
-        Cadastro cadastro = new Cadastro();
+        CadastroVM cadastro = new CadastroVM();
 
         public FormCadastro()
         {

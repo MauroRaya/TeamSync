@@ -11,23 +11,10 @@ namespace sg_funcionarios
         private static String msgErro;
         private static bool erro;
 
-        public static String getMsgErro()
-        {
-            return msgErro;
-        }
-        public static bool getErro()
-        {
-            return erro;        
-        }
+        public static String getMsgErro() { return msgErro; }
+        public static bool getErro() { return erro; }
 
-        public static void setMsgErro(String _msg)
-        {
-            msgErro = _msg;
-            erro = true;
-        }
-        public static void setErro(bool _erro)
-        {
-            erro = _erro;
-        }
+        public static void setMsgErro(String _msg) { msgErro = _msg; erro = true; }
+        public static void setErro(bool _erro) { erro = _erro; }
     }
 }

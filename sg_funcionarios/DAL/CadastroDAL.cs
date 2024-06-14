@@ -13,7 +13,7 @@ namespace sg_funcionarios
 {
     static class CadastroDAL
     {
-        public static void criarUsuario(Cadastro cadastro)
+        public static void criarUsuario(CadastroVM cadastro)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -44,7 +44,7 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome", cadastro.getNome());
+                    cmd.Parameters.AddWithValue("@nome",  cadastro.getNome());
                     cmd.Parameters.AddWithValue("@senha", cadastro.getSenha());
 
                     try

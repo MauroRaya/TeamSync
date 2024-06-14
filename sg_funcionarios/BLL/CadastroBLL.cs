@@ -10,7 +10,7 @@ namespace sg_funcionarios
 {
     static class CadastroBLL
     {
-        public static void validarCampos(Cadastro cadastro)
+        public static void validarCampos(CadastroVM cadastro)
         {
             Erro.setErro(false);
 

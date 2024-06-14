@@ -9,7 +9,7 @@ namespace sg_funcionarios
 {
     static class LoginBLL
     {
-        public static void validarCampos(Login login)
+        public static void validarCampos(LoginVM login)
         {
             Erro.setErro(false);
 
@@ -26,12 +26,12 @@ namespace sg_funcionarios
             }
         }
 
-        public static bool usuarioExiste(Login login)
+        public static bool usuarioExiste(LoginVM login)
         {
             return LoginDAL.usuarioExiste(login);
         }
 
-        public static int getCodigoUsuario(Login login)
+        public static int getCodigoUsuario(LoginVM login)
         {
             return LoginDAL.getCodigoUsuario(login);
         }
