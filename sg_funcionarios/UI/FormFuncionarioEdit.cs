@@ -53,6 +53,12 @@ namespace sg_funcionarios.UI
                 return;
             }
 
+            MessageBox.Show("Informações do funcionário foram editadas com sucesso.", 
+                            "Editar funcionário",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+
             btnSair_Click(this, EventArgs.Empty); //voltar para form funcionarios se bem sucedido
         }
     }

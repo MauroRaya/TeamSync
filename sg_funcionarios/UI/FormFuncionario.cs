@@ -34,7 +34,38 @@ namespace sg_funcionarios
             }
             else if (colname == "remover")
             {
-                //fazer ainda
+                int indexLinha = e.RowIndex;
+
+                if (indexLinha >= 0)
+                {
+                    DataGridViewRow linha = dataGridView1.Rows[indexLinha];
+                    String nomeFuncionario = Convert.ToString(linha.Cells[1].Value);
+
+                    DialogResult dr = MessageBox.Show($"Tem certeza que deseja remover o funcionário {nomeFuncionario} permanentemente?",
+                                                      "Remover funcionário",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.Yes)
+                    {
+                        dataGridView1.Rows.RemoveAt(indexLinha);
+
+                        int codigoFuncionario = Convert.ToInt32(linha.Cells[0].Value);
+
+                        FuncionarioRemoveBLL.removerFuncionario(codigoFuncionario);
+
+                        if (Erro.getErro())
+                        {
+                            MessageBox.Show(Erro.getMsgErro());
+                            return;
+                        }
+
+                        MessageBox.Show("Funcionário removido com sucesso.",
+                                        "Remover funcionário",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                }
             }
         }
 

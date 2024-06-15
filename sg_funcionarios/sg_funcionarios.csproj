@@ -62,10 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\FuncionarioRemoveBLL.cs" />
     <Compile Include="BLL\FuncionarioEditBLL.cs" />
     <Compile Include="BLL\FuncionarioAddBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
     <Compile Include="DAL\FuncionarioAddDAL.cs" />
+    <Compile Include="DAL\FuncionarioRemoveDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
     <Compile Include="DAL\FuncionarioEditDAL.cs" />
     <Compile Include="UI\FormCadastro.cs">
