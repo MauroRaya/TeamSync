@@ -18,12 +18,6 @@ namespace sg_funcionarios
 
             using (var conn = new SqlConnection(strConexao))
             {
-                if (conn == null)
-                {
-                    Erro.setMsgErro("Conexão não foi definida ou está com problema. ");
-                    return false;
-                }
-
                 try
                 {
                     conn.Open();
@@ -39,12 +33,13 @@ namespace sg_funcionarios
                     return false;
                 }
 
-                String query = "SELECT nm_usuario, ds_senha FROM Usuario WHERE nm_usuario = @nome AND ds_senha = @senha";
+                String query = "SELECT nm_usuario, ds_senha " +
+                               "FROM Usuario " +
+                               "WHERE nm_usuario = @nome";
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome",  usuario.getNome());
-                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
+                    cmd.Parameters.AddWithValue("@nome", usuario.getNome());
 
                     object result = null;
 
@@ -80,12 +75,6 @@ namespace sg_funcionarios
 
             using (var conn = new SqlConnection(strConexao))
             {
-                if (conn == null)
-                {
-                    Erro.setMsgErro("Conexão não foi definida ou está com problema. ");
-                    return -1;
-                }
-
                 try
                 {
                     conn.Open();

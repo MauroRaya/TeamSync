@@ -18,12 +18,6 @@ namespace sg_funcionarios
 
             using (var conn = new SqlConnection(strConexao))
             {
-                if (conn == null)
-                {
-                    Erro.setMsgErro("Conexão não foi definida ou está com problema. ");
-                    return;
-                }
-
                 try
                 {
                     conn.Open();
@@ -39,7 +33,8 @@ namespace sg_funcionarios
                     return;
                 }
 
-                String query = "INSERT INTO Usuario (nm_usuario, ds_senha) VALUES (@nome, @senha)";
+                String query = "INSERT INTO Usuario " +
+                               "VALUES (@nome, @senha)";
 
                 using (var cmd = new SqlCommand(query, conn))
                 {

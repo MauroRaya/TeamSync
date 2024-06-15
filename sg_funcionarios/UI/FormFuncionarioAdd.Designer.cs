@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 71);
+            this.panel1.Size = new System.Drawing.Size(483, 71);
             this.panel1.TabIndex = 9;
             // 
             // btnSair
@@ -71,7 +71,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(429, -1);
+            this.btnSair.Location = new System.Drawing.Point(458, 4);
             this.btnSair.Margin = new System.Windows.Forms.Padding(0);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(25, 35);
@@ -89,7 +89,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(205, 22);
             this.label3.TabIndex = 4;
-            this.label3.Text = "adicionar funcionario";
+            this.label3.Text = "adicionar funcionário";
             // 
             // label2
             // 
@@ -106,19 +106,19 @@
             // 
             this.dtpDataNascimento.CalendarFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(17, 176);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(17, 186);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(102, 20);
-            this.dtpDataNascimento.TabIndex = 43;
+            this.dtpDataNascimento.TabIndex = 42;
             // 
             // rbFeminino
             // 
             this.rbFeminino.AutoSize = true;
             this.rbFeminino.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFeminino.Location = new System.Drawing.Point(129, 241);
+            this.rbFeminino.Location = new System.Drawing.Point(129, 248);
             this.rbFeminino.Name = "rbFeminino";
             this.rbFeminino.Size = new System.Drawing.Size(91, 24);
-            this.rbFeminino.TabIndex = 42;
+            this.rbFeminino.TabIndex = 41;
             this.rbFeminino.Text = "Feminino";
             this.rbFeminino.UseVisualStyleBackColor = true;
             // 
@@ -127,10 +127,10 @@
             this.rbMasculino.AutoSize = true;
             this.rbMasculino.Checked = true;
             this.rbMasculino.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMasculino.Location = new System.Drawing.Point(17, 241);
+            this.rbMasculino.Location = new System.Drawing.Point(17, 248);
             this.rbMasculino.Name = "rbMasculino";
             this.rbMasculino.Size = new System.Drawing.Size(102, 24);
-            this.rbMasculino.TabIndex = 41;
+            this.rbMasculino.TabIndex = 40;
             this.rbMasculino.TabStop = true;
             this.rbMasculino.Text = "Masculino";
             this.rbMasculino.UseVisualStyleBackColor = true;
@@ -138,62 +138,62 @@
             // tbSalario
             // 
             this.tbSalario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSalario.Location = new System.Drawing.Point(258, 241);
+            this.tbSalario.Location = new System.Drawing.Point(250, 248);
             this.tbSalario.Name = "tbSalario";
-            this.tbSalario.Size = new System.Drawing.Size(114, 27);
-            this.tbSalario.TabIndex = 40;
+            this.tbSalario.Size = new System.Drawing.Size(117, 27);
+            this.tbSalario.TabIndex = 39;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(255, 220);
+            this.label9.Location = new System.Drawing.Point(247, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 18);
-            this.label9.TabIndex = 39;
+            this.label9.TabIndex = 38;
             this.label9.Text = "Salário";
             // 
             // tbCargo
             // 
             this.tbCargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCargo.Location = new System.Drawing.Point(258, 176);
+            this.tbCargo.Location = new System.Drawing.Point(250, 183);
             this.tbCargo.Name = "tbCargo";
-            this.tbCargo.Size = new System.Drawing.Size(175, 27);
-            this.tbCargo.TabIndex = 38;
+            this.tbCargo.Size = new System.Drawing.Size(203, 27);
+            this.tbCargo.TabIndex = 37;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(255, 155);
+            this.label8.Location = new System.Drawing.Point(247, 162);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 18);
-            this.label8.TabIndex = 37;
+            this.label8.TabIndex = 36;
             this.label8.Text = "Cargo";
             // 
             // tbTelefone
             // 
             this.tbTelefone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTelefone.Location = new System.Drawing.Point(258, 110);
+            this.tbTelefone.Location = new System.Drawing.Point(250, 117);
             this.tbTelefone.Name = "tbTelefone";
-            this.tbTelefone.Size = new System.Drawing.Size(175, 27);
-            this.tbTelefone.TabIndex = 36;
+            this.tbTelefone.Size = new System.Drawing.Size(203, 27);
+            this.tbTelefone.TabIndex = 35;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(255, 89);
+            this.label7.Location = new System.Drawing.Point(247, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 18);
-            this.label7.TabIndex = 35;
+            this.label7.TabIndex = 34;
             this.label7.Text = "Telefone";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 220);
+            this.label5.Location = new System.Drawing.Point(14, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 18);
             this.label5.TabIndex = 33;
@@ -206,11 +206,11 @@
             this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(17, 297);
+            this.btnConfirmar.Location = new System.Drawing.Point(17, 312);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(112, 35);
             this.btnConfirmar.TabIndex = 32;
-            this.btnConfirmar.Text = "CONFIRMAR";
+            this.btnConfirmar.Text = "ADICIONAR";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -218,7 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 155);
+            this.label4.Location = new System.Drawing.Point(14, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 18);
             this.label4.TabIndex = 31;
@@ -227,16 +227,16 @@
             // tbNome
             // 
             this.tbNome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNome.Location = new System.Drawing.Point(17, 110);
+            this.tbNome.Location = new System.Drawing.Point(17, 117);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(201, 27);
+            this.tbNome.Size = new System.Drawing.Size(203, 27);
             this.tbNome.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 89);
+            this.label1.Location = new System.Drawing.Point(14, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 18);
             this.label1.TabIndex = 29;
@@ -246,22 +246,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 357);
+            this.ClientSize = new System.Drawing.Size(483, 385);
             this.Controls.Add(this.dtpDataNascimento);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rbFeminino);
-            this.Controls.Add(this.tbTelefone);
             this.Controls.Add(this.rbMasculino);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSalario);
-            this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbCargo);
-            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbTelefone);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbNome);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFuncionarioAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -274,6 +274,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label3;

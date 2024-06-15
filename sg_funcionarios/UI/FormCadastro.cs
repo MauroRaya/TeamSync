@@ -28,8 +28,8 @@ namespace sg_funcionarios
         private void btnCriarConta_Click(object sender, EventArgs e)
         {
             String nomeUsuario = tbNomeUsuario.Text;
-            String senha = tbSenha.Text;
-            String confSenha = tbConfSenha.Text;
+            String senha       = tbSenha.Text;
+            String confSenha   = tbConfSenha.Text;
 
             usuario.setNome(nomeUsuario);
             usuario.setSenha(senha);

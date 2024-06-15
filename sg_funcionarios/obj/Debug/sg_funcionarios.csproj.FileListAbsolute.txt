@@ -11,3 +11,5 @@ C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormCadastro.resources
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormLogin.resources
 C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.FormFuncionario.resources
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.UI.FormFuncionarioEdit.resources
+C:\Users\Mauro\Desktop\sg_funcionarios\sg_funcionarios\obj\Debug\sg_funcionarios.UI.FormFuncionarioAdd.resources

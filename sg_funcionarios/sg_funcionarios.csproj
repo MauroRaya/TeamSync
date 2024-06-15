@@ -62,8 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\FuncionarioEditBLL.cs" />
+    <Compile Include="BLL\FuncionarioAddBLL.cs" />
     <Compile Include="BLL\FuncionarioBLL.cs" />
+    <Compile Include="DAL\FuncionarioAddDAL.cs" />
     <Compile Include="DAL\FuncionarioDAL.cs" />
+    <Compile Include="DAL\FuncionarioEditDAL.cs" />
     <Compile Include="UI\FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +84,18 @@
     <Compile Include="DAL\CadastroDAL.cs" />
     <Compile Include="Erro.cs" />
     <Compile Include="Entidades\Funcionario.cs" />
+    <Compile Include="UI\FormFuncionarioEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormFuncionarioEdit.Designer.cs">
+      <DependentUpon>FormFuncionarioEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormFuncionarioAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormFuncionarioAdd.Designer.cs">
+      <DependentUpon>FormFuncionarioAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormFuncionario.resx">
       <DependentUpon>FormFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormFuncionarioEdit.resx">
+      <DependentUpon>FormFuncionarioEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormFuncionarioAdd.resx">
+      <DependentUpon>FormFuncionarioAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

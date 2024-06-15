@@ -6,7 +6,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,8 +13,7 @@ namespace sg_funcionarios.UI
 {
     public partial class FormFuncionarioAdd : Form
     {
-        Thread th;
-        FuncionarioVM funcAdd = new FuncionarioVM();
+        Funcionario funcionario = new Funcionario();
 
         public FormFuncionarioAdd()
         {
@@ -24,35 +22,28 @@ namespace sg_funcionarios.UI
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-            th = new Thread(abrirFormFuncionarios);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-
-        private void abrirFormFuncionarios(object obj)
-        {
-            Application.Run(new FormFuncionarios());
+            FormFuncionario formFuncionario = new FormFuncionario();
+            formFuncionario.Show();
+            this.Hide();
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            String nome = tbNome.Text;
+            String nome           = tbNome.Text;
             String dataNascimento = dtpDataNascimento.Value.ToString("dd/MM/yyyy");
-            char genero = rbMasculino.Checked ? 'M' : 'F';
-            String telefone = tbTelefone.Text;
-            String cargo = tbCargo.Text;
-            String salario = tbSalario.Text;
+            String genero         = rbMasculino.Checked ? "M" : "F";
+            String telefone       = tbTelefone.Text;
+            String cargo          = tbCargo.Text;
+            String salario        = tbSalario.Text;
 
-            funcAdd.setNome(nome);
-            funcAdd.setDataNascimento(dataNascimento);
-            funcAdd.setGenero(genero);
-            funcAdd.setTelefone(telefone);
-            funcAdd.setCargo(cargo);
-            funcAdd.setSalario(salario);
+            funcionario.setNome(nome);
+            funcionario.setDataNascimento(dataNascimento);
+            funcionario.setGenero(genero);
+            funcionario.setTelefone(telefone);
+            funcionario.setCargo(cargo);
+            funcionario.setSalario(salario);
 
-            FuncionarioAddBLL.validarCampos(funcAdd); //ja coloca no banco se validação for bem sucedida
+            FuncionarioAddBLL.validarCampos(funcionario); //se validar já cria no banco
 
             if (Erro.getErro())
             {
@@ -60,7 +51,7 @@ namespace sg_funcionarios.UI
                 return;
             }
 
-
+            btnSair_Click(this, EventArgs.Empty); //voltar para form funcionarios se bem sucedido
         }
     }
 }

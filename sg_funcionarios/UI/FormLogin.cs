@@ -30,7 +30,7 @@ namespace sg_funcionarios
         private void btnLogin_Click(object sender, EventArgs e)
         {
             String nomeUsuario = tbNomeUsuario.Text;
-            String senha = tbSenha.Text;
+            String senha       = tbSenha.Text;
 
             usuario.setNome(nomeUsuario);
             usuario.setSenha(senha);

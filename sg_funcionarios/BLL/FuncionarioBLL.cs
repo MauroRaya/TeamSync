@@ -10,61 +10,6 @@ namespace sg_funcionarios.BLL
 {
     static class FuncionarioBLL
     {
-        public static void validarCampos(Funcionario funcionario)
-        {
-            Erro.setErro(false);
-
-            if (String.IsNullOrEmpty(funcionario.getNome()))
-            {
-                Erro.setMsgErro("Nome é de preenchimento obrigatório. ");
-                return;
-            }
-
-            if (String.IsNullOrEmpty(funcionario.getTelefone()))
-            {
-                Erro.setMsgErro("Telefone é de preenchimento obrigatório. ");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    long.TryParse(funcionario.getTelefone(), out long telefone);
-                }
-                catch
-                {
-                    Erro.setMsgErro("Telefone precisa ser um valor numérico. ");
-                    return;
-                }
-            }
-
-            if (String.IsNullOrEmpty(funcionario.getCargo()))
-            {
-                Erro.setMsgErro("Cargo é de preenchimento obrigatório. ");
-                return;
-            }
-
-            if (String.IsNullOrEmpty(funcionario.getSalario()))
-            {
-                Erro.setMsgErro("Salario é de preenchimento obrigatório. ");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    float.TryParse(funcionario.getSalario(), out float salario);
-                }
-                catch
-                {
-                    Erro.setMsgErro("Salário precisa ser um valor numérico. ");
-                    return;
-                }
-            }
-
-            FuncionarioDAL.criarFuncionario(funcionario);
-        }
-
         public static List<Funcionario> getFuncionarios()
         {
             return FuncionarioDAL.getFuncionarios();
