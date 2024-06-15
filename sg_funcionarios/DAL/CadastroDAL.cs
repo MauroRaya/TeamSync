@@ -1,5 +1,4 @@
-﻿using sg_funcionarios.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -13,7 +12,7 @@ namespace sg_funcionarios
 {
     static class CadastroDAL
     {
-        public static void criarUsuario(CadastroVM cadastro)
+        public static void criarUsuario(Usuario usuario)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -44,8 +43,8 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome",  cadastro.getNome());
-                    cmd.Parameters.AddWithValue("@senha", cadastro.getSenha());
+                    cmd.Parameters.AddWithValue("@nome",  usuario.getNome());
+                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
 
                     try
                     {

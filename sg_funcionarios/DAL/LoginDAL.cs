@@ -1,5 +1,4 @@
-﻿using sg_funcionarios.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -13,7 +12,7 @@ namespace sg_funcionarios
 {
     static class LoginDAL
     {
-        public static bool usuarioExiste(LoginVM login)
+        public static bool usuarioExiste(Usuario usuario)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -44,8 +43,8 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome", login.getNome());
-                    cmd.Parameters.AddWithValue("@senha", login.getSenha());
+                    cmd.Parameters.AddWithValue("@nome",  usuario.getNome());
+                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
 
                     object result = null;
 
@@ -55,21 +54,27 @@ namespace sg_funcionarios
                     }
                     catch (SqlException ex)
                     {
-                        Erro.setMsgErro("Erro ao tentar consultar o usuario no banco de dados. " + ex.Message);
+                        Erro.setMsgErro("Erro ao tentar consultar o usuário no banco de dados. " + ex.Message);
                         return false;
                     }
                     catch (Exception ex)
                     {
-                        Erro.setMsgErro("Um erro inesperado aconteceu ao tentar consultar o usuario. " + ex.Message);
+                        Erro.setMsgErro("Um erro inesperado aconteceu ao tentar consultar o usuário. " + ex.Message);
                         return false;
                     }
 
-                    return result != null;
+                    if (result == null)
+                    {
+                        Erro.setMsgErro("Usuário não encontrado. ");
+                        return false;
+                    }
+
+                    return true;
                 }
             }
         }
 
-        public static int getCodigoUsuario(LoginVM login)
+        public static int getCodigoUsuario(Usuario usuario)
         {
             String strConexao = ConfigurationManager.ConnectionStrings["strConexao"].ConnectionString;
 
@@ -100,8 +105,8 @@ namespace sg_funcionarios
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome",  login.getNome());
-                    cmd.Parameters.AddWithValue("@senha", login.getSenha());
+                    cmd.Parameters.AddWithValue("@nome",  usuario.getNome());
+                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
 
                     try
                     {

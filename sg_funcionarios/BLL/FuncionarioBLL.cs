@@ -1,5 +1,4 @@
 ﻿using sg_funcionarios.DAL;
-using sg_funcionarios.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,7 +10,7 @@ namespace sg_funcionarios.BLL
 {
     static class FuncionarioBLL
     {
-        public static void validarCampos(FuncionarioVM funcionario)
+        public static void validarCampos(Funcionario funcionario)
         {
             Erro.setErro(false);
 
@@ -66,7 +65,7 @@ namespace sg_funcionarios.BLL
             FuncionarioDAL.criarFuncionario(funcionario);
         }
 
-        public static List<FuncionarioVM> getFuncionarios()
+        public static List<Funcionario> getFuncionarios()
         {
             return FuncionarioDAL.getFuncionarios();
         }

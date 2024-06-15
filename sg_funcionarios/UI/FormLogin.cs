@@ -1,5 +1,4 @@
-﻿using sg_funcionarios.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +15,7 @@ namespace sg_funcionarios
 {
     public partial class FormLogin : Form
     {
-        Thread th;
-        LoginVM login = new LoginVM();
+        Usuario usuario = new Usuario();
 
         public FormLogin()
         {
@@ -34,10 +32,10 @@ namespace sg_funcionarios
             String nomeUsuario = tbNomeUsuario.Text;
             String senha = tbSenha.Text;
 
-            login.setNome(nomeUsuario);
-            login.setSenha(senha);
+            usuario.setNome(nomeUsuario);
+            usuario.setSenha(senha);
 
-            LoginBLL.validarCampos(login);
+            LoginBLL.validarCampos(usuario);
 
             if (Erro.getErro())
             {
@@ -45,13 +43,13 @@ namespace sg_funcionarios
                 return;
             }
 
-            if (!LoginBLL.usuarioExiste(login))
+            if (!LoginBLL.usuarioExiste(usuario))
             {
                 MessageBox.Show(Erro.getMsgErro());
                 return;
             }
 
-            int codigoUsuario = LoginBLL.getCodigoUsuario(login);
+            int codigoUsuario = LoginBLL.getCodigoUsuario(usuario);
 
             if (codigoUsuario == -1)
             {
@@ -59,41 +57,30 @@ namespace sg_funcionarios
                 return;
             }
 
-            Usuario.setCodigo(codigoUsuario);
-            Usuario.setNome(login.getNome());
-            Usuario.setSenha(login.getSenha());
+            Usuario.codigo = codigoUsuario;
 
             MessageBox.Show("Usuario autenticado com sucesso!");
 
-            irFuncionarios(this, EventArgs.Empty);
+            irFuncionarios();
         }
 
         private void btnIrCadastro_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-            th = new Thread(abrirFormCadastro);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            FormCadastro formCadastro = new FormCadastro();
+            formCadastro.Show();
+            this.Hide();
         }
 
-        private void abrirFormCadastro(object obj)
+        private void irFuncionarios()
         {
-            Application.Run(new FormCadastro());
+            FormFuncionario formFuncionario = new FormFuncionario();
+            formFuncionario.Show();
+            this.Hide();
         }
 
-        private void irFuncionarios(object sender, EventArgs e)
+        private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
-            this.Close();
-
-            th = new Thread(abrirFormFuncionario);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-
-        private void abrirFormFuncionario(object obj)
-        {
-            Application.Run(new FormFuncionario());
+            tbSenha.PasswordChar = cbMostrarSenha.Checked ? '\0' : '*';
         }
     }
 }

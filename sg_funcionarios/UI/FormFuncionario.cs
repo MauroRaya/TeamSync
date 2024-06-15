@@ -1,5 +1,4 @@
 ﻿using sg_funcionarios.BLL;
-using sg_funcionarios.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +14,26 @@ namespace sg_funcionarios
 {
     public partial class FormFuncionario : Form
     {
-        FuncionarioVM funcionario = new FuncionarioVM();
+        Funcionario funcionario = new Funcionario();
 
         public FormFuncionario()
         {
             InitializeComponent();
-            this.Load += Load_Funcionarios;
+            this.Load += load_Funcionarios;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colname = dataGridView1.Columns[e.ColumnIndex].Name;
+            if (colname == "editar")
+            {
+                MessageBox.Show("Botão editar clicado na linha " + e.RowIndex);
+            }
+            else if (colname == "remover")
+            {
+                MessageBox.Show("Botão remover clicado na linha " + e.RowIndex);
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -28,7 +41,7 @@ namespace sg_funcionarios
             Application.Exit();
         }
 
-        private void Load_Funcionarios(object sender, EventArgs e)
+        private void load_Funcionarios(object sender, EventArgs e)
         {
             var funcionarios = FuncionarioBLL.getFuncionarios();
 
@@ -41,18 +54,8 @@ namespace sg_funcionarios
             string imgEditarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_editar.png");
             string imgRemoverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_remover.png");
 
-            Bitmap imgEditar = null;
-            Bitmap imgRemover = null;
-
-            using (Bitmap originalImage = new Bitmap(imgEditarPath))
-            {
-                imgEditar = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
-            }
-
-            using (Bitmap originalImage = new Bitmap(imgRemoverPath))
-            {
-                imgRemover = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
-            }
+            Bitmap imgEditar = GetThumbnailImage(imgEditarPath, 22, 22);
+            Bitmap imgRemover = GetThumbnailImage(imgRemoverPath, 22, 22);
 
             foreach (var func in funcionarios)
             {
@@ -71,12 +74,12 @@ namespace sg_funcionarios
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            String nome = tbNome.Text;
-            String dataNascimento = dtpDataNascimento.Value.ToString("dd/MM/yyyy");
+            string nome = tbNome.Text;
+            string dataNascimento = dtpDataNascimento.Value.ToString("dd/MM/yyyy");
             char genero = rbMasculino.Checked ? 'M' : 'F';
-            String telefone = tbTelefone.Text;
-            String cargo = tbCargo.Text;
-            String salario = tbSalario.Text;
+            string telefone = tbTelefone.Text;
+            string cargo = tbCargo.Text;
+            string salario = tbSalario.Text;
 
             funcionario.setNome(nome);
             funcionario.setDataNascimento(dataNascimento);
@@ -85,7 +88,7 @@ namespace sg_funcionarios
             funcionario.setCargo(cargo);
             funcionario.setSalario(salario);
 
-            FuncionarioBLL.validarCampos(funcionario); //ja cria no banco se validar
+            FuncionarioBLL.validarCampos(funcionario); //já cria no banco se validar
 
             if (Erro.getErro())
             {
@@ -96,18 +99,8 @@ namespace sg_funcionarios
             string imgEditarPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_editar.png");
             string imgRemoverPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"imgs\img_remover.png");
 
-            Bitmap imgEditar = null;
-            Bitmap imgRemover = null;
-
-            using (Bitmap originalImage = new Bitmap(imgEditarPath))
-            {
-                imgEditar = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
-            }
-
-            using (Bitmap originalImage = new Bitmap(imgRemoverPath))
-            {
-                imgRemover = new Bitmap(originalImage.GetThumbnailImage(22, 22, null, IntPtr.Zero));
-            }
+            Bitmap imgEditar = GetThumbnailImage(imgEditarPath, 22, 22);
+            Bitmap imgRemover = GetThumbnailImage(imgRemoverPath, 22, 22);
 
             dataGridView1.Rows.Add(
                 funcionario.getNome(),
@@ -119,6 +112,25 @@ namespace sg_funcionarios
                 imgEditar,
                 imgRemover
             );
+        }
+
+        private Bitmap GetThumbnailImage(string path, int width, int height)
+        {
+            using (Bitmap originalImage = new Bitmap(path))
+            {
+                return new Bitmap(originalImage.GetThumbnailImage(width, height, null, IntPtr.Zero));
+            }
+        }
+
+        private void editarFuncionario(object sender, EventArgs e)
+        {
+            lbOperacaoFunc.Text = "Editar funcionário";
+            // Additional code to edit the employee
+        }
+
+        private void removerFuncionario(object sender, EventArgs e)
+        {
+            // Code to remove the employee
         }
     }
 }

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace sg_funcionarios
 {
-    static class Usuario
+    class Usuario
     {
-        private static int codigo;
-        private static String nome;
-        private static String senha;
+        public static int codigo;
+        private String nome;
+        private String senha;
 
-        public static int getCodigo() { return codigo; }
-        public static String getNome() { return nome; }
-        public static String getSenha() { return senha; }
+        public int getCodigo() { return codigo; }
+        public String getNome() { return nome; }
+        public String getSenha() { return senha; }
 
-        public static void setCodigo(int _codigo) { codigo = _codigo; }
-        public static void setNome(String _nome) { nome = _nome; }
-        public static void setSenha(String _senha) { senha = _senha; }
+        public void setCodigo(int _codigo) { codigo = _codigo; }
+        public void setNome(String _nome) { nome = _nome; }
+        public void setSenha(String _senha) { senha = _senha; }
     }
 }

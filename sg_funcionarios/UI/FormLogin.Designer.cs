@@ -129,6 +129,7 @@
             this.tbSenha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSenha.Location = new System.Drawing.Point(17, 183);
             this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(203, 27);
             this.tbSenha.TabIndex = 4;
             // 
@@ -143,6 +144,7 @@
             this.cbMostrarSenha.TabIndex = 5;
             this.cbMostrarSenha.Text = "Mostrar senha";
             this.cbMostrarSenha.UseVisualStyleBackColor = true;
+            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.cbMostrarSenha_CheckedChanged);
             // 
             // btnLogin
             // 
@@ -188,7 +190,7 @@
             this.btnIrCadastro.UseVisualStyleBackColor = false;
             this.btnIrCadastro.Click += new System.EventHandler(this.btnIrCadastro_Click);
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +205,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);

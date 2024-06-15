@@ -1,5 +1,4 @@
-﻿using sg_funcionarios.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +13,7 @@ namespace sg_funcionarios
 {
     public partial class FormCadastro : Form
     {
-        Thread th;
-        CadastroVM cadastro = new CadastroVM();
+        Usuario usuario = new Usuario();
 
         public FormCadastro()
         {
@@ -33,11 +31,10 @@ namespace sg_funcionarios
             String senha = tbSenha.Text;
             String confSenha = tbConfSenha.Text;
 
-            cadastro.setNome(nomeUsuario);
-            cadastro.setSenha(senha);
-            cadastro.setConfSenha(confSenha);
+            usuario.setNome(nomeUsuario);
+            usuario.setSenha(senha);
 
-            CadastroBLL.validarCampos(cadastro); //caso validação bem sucedida, já cria no banco
+            CadastroBLL.validarCampos(usuario, confSenha); //caso validação bem sucedida, já cria no banco
 
             if (Erro.getErro())
             {
@@ -51,16 +48,9 @@ namespace sg_funcionarios
 
         private void btnIrLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-            th = new Thread(abrirFormLogin);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-
-        private void abrirFormLogin(object obj)
-        {
-            Application.Run(new FormLogin());
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
         }
     }
 }
