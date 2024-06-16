@@ -246,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 385);
+            this.ClientSize = new System.Drawing.Size(483, 373);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.rbFeminino);
             this.Controls.Add(this.rbMasculino);

@@ -34,10 +34,12 @@ namespace sg_funcionarios.DAL
                     return null;
                 }
 
-                String query = "SELECT * FROM Funcionario";
+                String query = "SELECT * FROM Funcionario WHERE cd_usuario = @cd_usuario";
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@cd_usuario", Usuario.codigo);
+
                     try
                     {
                         using (var reader = cmd.ExecuteReader())

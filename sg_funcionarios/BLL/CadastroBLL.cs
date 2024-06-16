@@ -18,10 +18,20 @@ namespace sg_funcionarios
                 Erro.setMsgErro("Nome de usuario é de preenchimento obrigatório. ");
                 return;
             }
+            if (usuario.getNome().Length > 15)
+            {
+                Erro.setMsgErro("Nome de usuário não pode ultrapassar 15 caracteres. ");
+                return;
+            }
 
             if (String.IsNullOrEmpty(usuario.getSenha()))
             {
                 Erro.setMsgErro("Senha é de preenchimento obrigatório. ");
+                return;
+            }
+            if (usuario.getSenha().Length > 15)
+            {
+                Erro.setMsgErro("Senha não pode ultrapassar 15 caracteres. ");
                 return;
             }
 

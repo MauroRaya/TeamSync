@@ -22,53 +22,6 @@ namespace sg_funcionarios
             dataGridView1.CellContentClick += clicarImagens;
         }
 
-        private void clicarImagens(object sender, DataGridViewCellEventArgs e) //de editar e remover
-        {
-            String colname = dataGridView1.Columns[e.ColumnIndex].Name;
-
-            if (colname == "editar")
-            {
-                FormFuncionarioEdit formFuncEdit = new FormFuncionarioEdit();
-                formFuncEdit.Show();
-                this.Hide();
-            }
-            else if (colname == "remover")
-            {
-                int indexLinha = e.RowIndex;
-
-                if (indexLinha >= 0)
-                {
-                    DataGridViewRow linha = dataGridView1.Rows[indexLinha];
-                    String nomeFuncionario = Convert.ToString(linha.Cells[1].Value);
-
-                    DialogResult dr = MessageBox.Show($"Tem certeza que deseja remover o funcionário {nomeFuncionario} permanentemente?",
-                                                      "Remover funcionário",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-
-                    if (dr == DialogResult.Yes)
-                    {
-                        dataGridView1.Rows.RemoveAt(indexLinha);
-
-                        int codigoFuncionario = Convert.ToInt32(linha.Cells[0].Value);
-
-                        FuncionarioRemoveBLL.removerFuncionario(codigoFuncionario);
-
-                        if (Erro.getErro())
-                        {
-                            MessageBox.Show(Erro.getMsgErro());
-                            return;
-                        }
-
-                        MessageBox.Show("Funcionário removido com sucesso.",
-                                        "Remover funcionário",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
-                    }
-                }
-            }
-        }
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -111,6 +64,89 @@ namespace sg_funcionarios
                     imgEditar,
                     imgRemover
                 );
+            }
+        }
+
+        private void clicarImagens(object sender, DataGridViewCellEventArgs e) //de editar e remover
+        {
+            String colname = dataGridView1.Columns[e.ColumnIndex].Name;
+
+            if (colname == "editar")
+            {
+                editarFuncionario(e);
+            }
+            else if (colname == "remover")
+            {
+                removerFuncionario(e);
+            }
+        }
+
+        private void editarFuncionario(DataGridViewCellEventArgs e)
+        {
+            FormFuncionarioEdit formFuncEdit = new FormFuncionarioEdit();
+
+            int indexLinha = e.RowIndex;
+
+            if (indexLinha >= 0)
+            {
+                DataGridViewRow linha = dataGridView1.Rows[indexLinha];
+
+                String codigo   = linha.Cells[0].Value.ToString();
+                String nome     = linha.Cells[1].Value.ToString();
+                String dataNasc = linha.Cells[2].Value.ToString();
+                String genero   = linha.Cells[3].Value.ToString();
+                String telefone = linha.Cells[4].Value.ToString();
+                String cargo    = linha.Cells[5].Value.ToString();
+                String salario  = linha.Cells[6].Value.ToString();
+
+                formFuncEdit.camposFuncionario = new Funcionario();
+
+                formFuncEdit.camposFuncionario.setCodigo(codigo);
+                formFuncEdit.camposFuncionario.setNome(nome);
+                formFuncEdit.camposFuncionario.setDataNascimento(dataNasc);
+                formFuncEdit.camposFuncionario.setGenero(genero);
+                formFuncEdit.camposFuncionario.setTelefone(telefone);
+                formFuncEdit.camposFuncionario.setCargo(cargo);
+                formFuncEdit.camposFuncionario.setSalario(salario);
+
+                formFuncEdit.Show();
+                this.Hide();
+            }
+        }
+
+        private void removerFuncionario(DataGridViewCellEventArgs e)
+        {
+            int indexLinha = e.RowIndex;
+
+            if (indexLinha >= 0)
+            {
+                DataGridViewRow linha = dataGridView1.Rows[indexLinha];
+                String nomeFuncionario = Convert.ToString(linha.Cells[1].Value);
+
+                DialogResult dr = MessageBox.Show($"Tem certeza que deseja remover o funcionário {nomeFuncionario} permanentemente?",
+                                                  "Remover funcionário",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+                if (dr == DialogResult.Yes)
+                {
+                    dataGridView1.Rows.RemoveAt(indexLinha);
+
+                    int codigoFuncionario = Convert.ToInt32(linha.Cells[0].Value);
+
+                    FuncionarioRemoveBLL.removerFuncionario(codigoFuncionario);
+
+                    if (Erro.getErro())
+                    {
+                        MessageBox.Show(Erro.getMsgErro());
+                        return;
+                    }
+
+                    MessageBox.Show("Funcionário removido com sucesso.",
+                                    "Remover funcionário",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
             }
         }
 
