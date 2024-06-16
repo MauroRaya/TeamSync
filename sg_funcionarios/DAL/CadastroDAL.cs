@@ -34,12 +34,13 @@ namespace sg_funcionarios
                 }
 
                 String query = "INSERT INTO Usuario " +
-                               "VALUES (@nome, @senha)";
+                               "VALUES (@nome, @hash, @salt)";
 
                 using (var cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@nome",  usuario.getNome());
-                    cmd.Parameters.AddWithValue("@senha", usuario.getSenha());
+                    cmd.Parameters.AddWithValue("@nome", usuario.getNome());
+                    cmd.Parameters.AddWithValue("@hash", usuario.getHash());
+                    cmd.Parameters.AddWithValue("@salt", usuario.getSalt());
 
                     try
                     {

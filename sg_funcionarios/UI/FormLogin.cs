@@ -33,31 +33,34 @@ namespace sg_funcionarios
             String senha       = tbSenha.Text;
 
             usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
 
-            LoginBLL.validarCampos(usuario);
+            LoginBLL.validarCampos(usuario, senha);
 
             if (Erro.getErro())
             {
-                MessageBox.Show(Erro.getMsgErro());
-                return;
-            }
-
-            if (!LoginBLL.usuarioExiste(usuario))
-            {
-                MessageBox.Show(Erro.getMsgErro());
+                MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             int codigoUsuario = LoginBLL.getCodigoUsuario(usuario);
 
-            if (codigoUsuario == -1)
+            if (codigoUsuario == -1) //valida se há erro, ou caso usuário não exista (código não encontrado)
             {
                 MessageBox.Show(Erro.getMsgErro());
                 return;
             }
 
             Usuario.codigo = codigoUsuario;
+
+            MessageBox.Show("Codigo usuario: " + Usuario.codigo);
+
+            LoginBLL.validarSenha(senha);
+
+            if (Erro.getErro())
+            {
+                MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             MessageBox.Show("Usuario autenticado com sucesso!");
 

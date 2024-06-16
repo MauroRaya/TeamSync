@@ -32,17 +32,17 @@ namespace sg_funcionarios
             String confSenha   = tbConfSenha.Text;
 
             usuario.setNome(nomeUsuario);
-            usuario.setSenha(senha);
 
-            CadastroBLL.validarCampos(usuario, confSenha); //caso validação bem sucedida, já cria no banco
+            CadastroBLL.validarCampos(usuario, senha, confSenha); //caso validação bem sucedida, já cria no banco
 
             if (Erro.getErro())
             {
-                MessageBox.Show(Erro.getMsgErro());
+                MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             MessageBox.Show("Usuario criado com sucesso. ");
+
             btnIrLogin_Click(this, EventArgs.Empty);
         }
 

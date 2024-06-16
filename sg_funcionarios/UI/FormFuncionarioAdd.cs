@@ -47,7 +47,7 @@ namespace sg_funcionarios.UI
 
             if (Erro.getErro())
             {
-                MessageBox.Show(Erro.getMsgErro());
+                MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

@@ -10,14 +10,17 @@ namespace sg_funcionarios
     {
         public static int codigo;
         private String nome;
-        private String senha;
+        private String hash;
+        private String salt;
 
         public int getCodigo() { return codigo; }
         public String getNome() { return nome; }
-        public String getSenha() { return senha; }
+        public String getHash() { return hash; }
+        public String getSalt() { return salt; }
 
         public void setCodigo(int _codigo) { codigo = _codigo; }
         public void setNome(String _nome) { nome = _nome; }
-        public void setSenha(String _senha) { senha = _senha; }
+        public void setHash(String _hash) { hash = _hash; }
+        public void setSalt(String _salt) { salt = _salt; }
     }
 }

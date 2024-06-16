@@ -41,7 +41,7 @@ namespace sg_funcionarios
 
             if (listaFuncionarios == null)
             {
-                MessageBox.Show(Erro.getMsgErro());
+                MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -138,7 +138,7 @@ namespace sg_funcionarios
 
                     if (Erro.getErro())
                     {
-                        MessageBox.Show(Erro.getMsgErro());
+                        MessageBox.Show(Erro.getMsgErro(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
