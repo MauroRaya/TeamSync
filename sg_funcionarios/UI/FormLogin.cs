@@ -52,8 +52,6 @@ namespace sg_funcionarios
 
             Usuario.codigo = codigoUsuario;
 
-            MessageBox.Show("Codigo usuario: " + Usuario.codigo);
-
             LoginBLL.validarSenha(senha);
 
             if (Erro.getErro())
