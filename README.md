@@ -1,12 +1,22 @@
-# Sistema de Gerenciamento de Funcionários
+# TeamSync
 
-Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Forms, utilizando arquitetura em camadas, e oferecendo uma interface intuitiva para gerenciar dados de funcionários de forma eficiente e segura.
+Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Forms. Oferece uma interface intuitiva para gerenciar dados de funcionários de forma eficiente e segura.
 
 ## Funcionalidades
 
 - **CRUD Completo**: Criação, leitura, atualização e exclusão de registros de funcionários.
 - **Autenticação e Autorização**: Mecanismos de login e controle de acesso para proteger os dados.
 - **Interface Intuitiva**: Design de interface fácil de usar com componentes visuais claros e organizados.
+
+## Estrutura do sistema
+
+Inclui uma arquitetura em 3 camadas lógicas.
+
+![Diagrama_Arquitetura]()
+
+## Captura de tela
+
+![Interface Principal]()
 
 ## Requisitos
 
@@ -25,9 +35,9 @@ Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Form
 
 ## Uso
 
-1. Crie um cadastro no sistema.
-2. Logue na conta criada.
-3. Utilize a interface para navegar entre as diferentes funcionalidades (adicionar, editar, excluir, exibir funcionários).
+1. Realize o cadastro no sistema para criar uma conta.
+2. Faça login utilizando as credenciais cadastradas.
+3. Utilize a interface intuitiva para acessar e gerenciar as funcionalidades disponíveis, incluindo a adição, edição, exclusão e visualização de informações dos funcionários.
 
 ## Contribuição
 
