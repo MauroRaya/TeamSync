@@ -5,7 +5,7 @@ Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Form
 ## Funcionalidades
 
 - **CRUD Completo**: Criação, leitura, atualização e exclusão de registros de funcionários.
-- **Autenticação e Autorização**: Mecanismos de login e controle de acesso para proteger os dados.
+- **Autenticação**: Mecanismos de login e controle de acesso para proteger os dados, além do uso de criptografias HASH e SALT.
 - **Interface Intuitiva**: Design de interface fácil de usar com componentes visuais claros e organizados.
 
 ## Estrutura do sistema
@@ -28,7 +28,7 @@ Inclui uma arquitetura em 3 camadas lógicas.
 
 1. Clone o repositório:
     ```bash
-    git clone https://github.com/seuusuario/sistema-gerenciamento-funcionarios.git
+    git clone https://github.com/MauroRaya/TeamSync.git
     ```
 2. Abra o projeto no Visual Studio.
 3. Compile e execute o projeto.
@@ -37,7 +37,7 @@ Inclui uma arquitetura em 3 camadas lógicas.
 
 1. Realize o cadastro no sistema para criar uma conta.
 2. Faça login utilizando as credenciais cadastradas.
-3. Utilize a interface intuitiva para acessar e gerenciar as funcionalidades disponíveis, incluindo a adição, edição, exclusão e visualização de informações dos funcionários.
+3. Utilize a interface para acessar e gerenciar as funcionalidades disponíveis, como adicionar, editar, remover e visualizar as informações dos funcionários.
 
 ## Contribuição
 
