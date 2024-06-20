@@ -12,11 +12,11 @@ Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Form
 
 Inclui uma arquitetura em 3 camadas lógicas.
 
-![Diagrama_Arquitetura]()
+![Diagrama_Arquitetura](https://github.com/MauroRaya/sg_funcionarios_cs/blob/main/imgs/img_diagrama_arquitetura.png)
 
 ## Captura de tela
 
-![Interface Principal]()
+![Interface Principal](https://github.com/MauroRaya/sg_funcionarios_cs/blob/main/imgs/img_forms.png)
 
 ## Requisitos
 
