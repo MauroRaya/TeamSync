@@ -8,12 +8,6 @@ Um sistema de gerenciamento de funcionários desenvolvido em C# com Windows Form
 - **Autenticação**: Mecanismos de login e controle de acesso para proteger os dados, além do uso de criptografias HASH e SALT.
 - **Interface Intuitiva**: Design de interface fácil de usar com componentes visuais claros e organizados.
 
-## Estrutura do sistema
-
-Inclui uma arquitetura em 3 camadas lógicas.
-
-![Diagrama_Arquitetura](https://github.com/MauroRaya/sg_funcionarios_cs/blob/main/imgs/img_diagrama_arquitetura.png)
-
 ## Captura de tela
 
 ![Interface Principal](https://github.com/MauroRaya/sg_funcionarios_cs/blob/main/imgs/img_forms.png)
